@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+      .search-wrapper {
+        display: flex;
+        max-width: 250px;
+        align-items: center;
+      }
+
+      .search-wrapper i {
+        height: 2.5rem;
+      }
+
+      table th {
+        position: relative;
+      }
+
+      table th i {
+        position: absolute;
+      }
+
+      .medium-tiny {
+        font-size: 1.5rem;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,11 +44,61 @@
     <div>
       <div class="section">
         <div class="row">
-          <div class="col s12 m6" style="border-right: solid 1px rgba(51,51,51,0.12);">
+          <div class="col m12 l6">
             <h3>Employee Information</h3>
+
+            <div class="section">
+              <div class="row">
+                <a style="margin-right: 10px;" class="waves-effect waves-light btn">CSV Export</a>
+                <a style="margin-right: 10px;" class="waves-effect waves-light btn">CSV Import</a>
+                <a style="margin-right: 10px;" class="waves-effect waves-light btn">Create</a>
+              </div>
+              <div class="search-wrapper">
+                <i class="material-icons">search</i>
+                <input id="search" type="search">
+              </div>
+            </div>
+
+            <div class="section">
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>NO<i class="medium-tiny material-icons">arrow_drop_down</i></th>
+                    <th>Number<i class="medium-tiny material-icons">arrow_drop_down</i></th>
+                    <th>Name<i class="medium-tiny material-icons">arrow_drop_down</i></th>
+                    <th>Email Address<i class="medium-tiny material-icons">arrow_drop_down</i></th>
+                    <th>Department<i class="medium-tiny material-icons">arrow_drop_down</i></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>010004</td>
+                    <td>Junji</td>
+                    <td>junji.asada@pastoraldog.com</td>
+                    <td>CS</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>010002</td>
+                    <td>Kazunori</td>
+                    <td>k.kinoshita@pastoraldog.com</td>
+                    <td>CS</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>020004</td>
+                    <td>Satoka</td>
+                    <td>satoka@odd-e.com</td>
+                    <td>CS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
-          <div class="col s12 m6" style="border-right: solid 1px rgba(51,51,51,0.12);">
+          <div class="col m12 l6" style="border-left: solid 1px rgba(51,51,51,0.12);">
             <div class="section">
               <div class="input-field">
                 <input id="name" type="text">
@@ -128,13 +202,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="center-align">
-            <p>When users create new employee information,the mail of the account issue is sent to the e-mail address of the employees that are registered<br/>
-            Employees can log in to the Call Jumper in the ID and initial password that is mentioned in the e-mail
-            </p>
           </div>
         </div>
       </div>
