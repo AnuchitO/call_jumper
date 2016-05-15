@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "dev": "webpack-dev-server",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -13,5 +15,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/suzuki_aki/calljumper_mockup#readme"
+  "homepage": "https://bitbucket.org/suzuki_aki/calljumper_mockup#readme",
+  "devDependencies": {
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
