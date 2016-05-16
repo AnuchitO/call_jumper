@@ -1,26 +1,31 @@
-var path = require("path");
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-  entry: ["./src/index.tsx"],
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index.tsx'
+  ],
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.join(__dirname, "build"),
+    publicPath: '/',
     filename: "bundle.js"
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   resolve: {
-    extensions: ["", ".ts", ".tsx", ".js"]
+    extensions: ['', '.ts', '.tsx', '.js']
   },
-
   module: {
     loaders: [
       {
         test: /\.tsx?$/,
-        loader: "ts-loader",
-        exclude: /node_modules/
+        loaders: ['react-hot', 'ts-loader'],
+        include: path.join(__dirname, 'src')
       }
     ]
-  },
-  devServer: {
-    contentBase: './build'
   }
 };
 
