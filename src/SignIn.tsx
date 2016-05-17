@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router';
 
 export default class SignIn extends React.Component<{}, {}> {
   render() {
@@ -22,7 +23,7 @@ export default class SignIn extends React.Component<{}, {}> {
           <label for="password">Password</label>
         </div>
         <div className="input-field">
-          <button className="waves-effect waves-light btn">Sign in</button>
+          <a className="waves-effect waves-light btn">Sign in</a>
         </div>
       </div>
 
@@ -31,7 +32,9 @@ export default class SignIn extends React.Component<{}, {}> {
       </div>
 
       <div className="section center-align">
-        <a className="waves-effect waves-light btn">Create New Account</a>
+        <Link to={`/signup`}>
+          <button className="waves-effect waves-light btn">Create New Account</button>
+        </Link>
       </div>
     </div>;
   }
