@@ -6,6 +6,26 @@ export default class SignUp extends React.Component<{}, {}> {
     $('select').material_select();
   }
 
+  generateMonths() {
+    var months = new Array();
+    for (let i=1; i<=12; i++) {
+      let label = ('00' + i).slice(-2);
+      months.push(<option key={i} value={label}>{label}</option>);
+    }
+    return months;
+  }
+
+  generateYears() {
+    var years = new Array();
+    let currentYear = new Date().getFullYear();
+    for (let i=0; i<5; i++) {
+      let label = currentYear.toString().slice(-2);
+      years.push(<option key={i} value={label}>{label}</option>);
+      currentYear++;
+    }
+    return years;
+  }
+
   render() {
     var formStyle = {
       maxWidth: 320,
@@ -43,30 +63,16 @@ export default class SignUp extends React.Component<{}, {}> {
         </div>
         <div className="row">
           <div className="input-field col s6">
-            <select id="month">
-              <option disabled selected>Choose month</option>
-              <option>01</option>
-              <option>02</option>
-              <option>03</option>
-              <option>04</option>
-              <option>05</option>
-              <option>07</option>
-              <option>08</option>
-              <option>09</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
+            <select value="" id="month">
+              <option value="" disabled>Choose month</option>
+              { this.generateMonths() }
             </select>
             <label>Month</label>
           </div>
           <div className="input-field col s6">
-            <select id="year">
-              <option disabled selected>Choose Year</option>
-              <option>16</option>
-              <option>17</option>
-              <option>18</option>
-              <option>19</option>
-              <option>20</option>
+            <select value="" id="year">
+              <option value="" disabled>Choose Year</option>
+              { this.generateYears() }
             </select>
             <label>Year</label>
           </div>
