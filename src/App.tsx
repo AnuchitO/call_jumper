@@ -1,9 +1,7 @@
 import * as React from 'react';
 
-import SignIn from './SignIn';
-
-export default class App extends React.Component<any, any> {
+export default class App extends React.Component<{}, {}> {
   render() {
-    return <SignIn />
+    return <div>{this.props.children}</div>;
   }
 }
