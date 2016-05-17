@@ -6,8 +6,8 @@ export default class SignUp extends React.Component<{}, {}> {
     $('select').material_select();
   }
 
-  generateMonths() {
-    var months = new Array();
+  monthOptions() {
+    let months = new Array();
     for (let i=1; i<=12; i++) {
       let label = ('00' + i).slice(-2);
       months.push(<option key={i} value={label}>{label}</option>);
@@ -15,8 +15,8 @@ export default class SignUp extends React.Component<{}, {}> {
     return months;
   }
 
-  generateYears() {
-    var years = new Array();
+  yearOptions() {
+    let years = new Array();
     let currentYear = new Date().getFullYear();
     for (let i=0; i<5; i++) {
       let label = currentYear.toString().slice(-2);
@@ -65,14 +65,14 @@ export default class SignUp extends React.Component<{}, {}> {
           <div className="input-field col s6">
             <select value="" id="month">
               <option value="" disabled>Choose month</option>
-              { this.generateMonths() }
+              { this.monthOptions() }
             </select>
             <label>Month</label>
           </div>
           <div className="input-field col s6">
             <select value="" id="year">
               <option value="" disabled>Choose Year</option>
-              { this.generateYears() }
+              { this.yearOptions() }
             </select>
             <label>Year</label>
           </div>
